@@ -9,7 +9,7 @@ function valdate (obj) {
         if (obj.hasOwnProperty(key)) {
             switch (key) {
                 case 'tel':// 验证电话号码
-                    if ( !/^1[3|4|5|8][0-9]\d{4,8}$/.test(obj[key]) ){
+                    if ( !/^1[3|4|5|8][0-9]\d{8}$/.test(obj[key]) ){
                         return '手机号码格式不正确';
                     };
                     break;
