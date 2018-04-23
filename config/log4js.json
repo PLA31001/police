@@ -1,20 +1,20 @@
 {
     "appenders" : {
         "access" : {
-            "type" : "datefile",
+            "type" : "DateFile",
             "filename" : "logs/access/access.log",
             "pattern" : ".yyyy-MM-dd",
             "alwaysIncludePattern" : true,
             "maxLevel" : "trace"
         },
         "error" : {
-            "type" : "datefile",
+            "type" : "DateFile",
             "filename" : "logs/error/error.log",
             "pattern" : ".yyyy-MM-dd",
             "alwaysIncludePattern" : true
         },
         "default" : {
-            "type" : "datefile",
+            "type" : "DateFile",
             "filename" : "logs/default/default.log",
             "pattern" : ".yyyy-MM-dd",
             "alwaysIncludePattern" : true
