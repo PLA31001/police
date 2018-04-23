@@ -9,12 +9,12 @@ module.exports = {
      */
     database : {
         mongodb : {
-            host : 'localhost',
+            host : 'police_db',
             dbname : 'police',
             port : 27017 
         },
         redis : {
-            host : "192.168.99.100"
+            host : "police_cache"
         }
     },
 
