@@ -1,0 +1,47 @@
+[2018-04-22T00:03:19.582] [ERROR] error - redis连接失败：Error: Redis connection to 192.168.99.100:6379 failed - connect ECONNREFUSED 192.168.99.100:6379
+[2018-04-22T00:03:20.939] [ERROR] error - redis连接失败：Error: Redis connection to 192.168.99.100:6379 failed - connect ECONNREFUSED 192.168.99.100:6379
+[2018-04-22T00:03:22.522] [ERROR] error - redis连接失败：Error: Redis connection to 192.168.99.100:6379 failed - connect ECONNREFUSED 192.168.99.100:6379
+[2018-04-22T09:52:06.526] [ERROR] error - redis连接失败：Error: Redis connection to 192.168.99.100:6379 failed - connect ECONNREFUSED 192.168.99.100:6379
+[2018-04-22T09:52:07.742] [ERROR] error - redis连接失败：Error: Redis connection to 192.168.99.100:6379 failed - connect ECONNREFUSED 192.168.99.100:6379
+[2018-04-22T09:52:09.084] [ERROR] error - redis连接失败：Error: Redis connection to 192.168.99.100:6379 failed - connect ECONNREFUSED 192.168.99.100:6379
+[2018-04-22T09:52:10.665] [ERROR] error - redis连接失败：Error: Redis connection to 192.168.99.100:6379 failed - connect ECONNREFUSED 192.168.99.100:6379
+[2018-04-22T09:52:12.649] [ERROR] error - redis连接失败：Error: Redis connection to 192.168.99.100:6379 failed - connect ECONNREFUSED 192.168.99.100:6379
+[2018-04-22T09:52:15.324] [ERROR] error - redis连接失败：Error: Redis connection to 192.168.99.100:6379 failed - connect ECONNREFUSED 192.168.99.100:6379
+[2018-04-22T09:52:19.178] [ERROR] error - redis连接失败：Error: Redis connection to 192.168.99.100:6379 failed - connect ECONNREFUSED 192.168.99.100:6379
+[2018-04-22T09:52:25.009] [ERROR] error - redis连接失败：Error: Redis connection to 192.168.99.100:6379 failed - connect ECONNREFUSED 192.168.99.100:6379
+[2018-04-22T09:52:34.224] [ERROR] error - redis连接失败：Error: Redis connection to 192.168.99.100:6379 failed - connect ECONNREFUSED 192.168.99.100:6379
+[2018-04-22T09:52:49.185] [ERROR] error - redis连接失败：Error: Redis connection to 192.168.99.100:6379 failed - connect ECONNREFUSED 192.168.99.100:6379
+[2018-04-22T11:17:54.852] [ERROR] error - ReferenceError: TypeError: Cannot read property 'hgetall' of undefined
+    at Object.auth.checkLogin (F:\nodejsProject\Intelligent police\model\auth.js:158:15)
+    at router.use (F:\nodejsProject\Intelligent police\routes\api\users.js:153:14)
+    at Layer.handle [as handle_request] (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:317:13)
+    at F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:335:12)
+    at next (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:174:3)
+    at router (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:317:13)
+    at F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:335:12)
+    at next (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:275:10)
+    at SendStream.error (F:\nodejsProject\Intelligent police\node_modules\serve-static\index.js:121:7)
+    at emitOne (events.js:116:13)
+[2018-04-22T11:22:12.163] [ERROR] error - ReferenceError: TypeError: Cannot read property 'hgetall' of undefined
+    at Object.auth.checkLogin (F:\nodejsProject\Intelligent police\model\auth.js:120:15)
+    at router.use (F:\nodejsProject\Intelligent police\routes\api\users.js:153:14)
+    at Layer.handle [as handle_request] (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:317:13)
+    at F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:335:12)
+    at next (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:174:3)
+    at router (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:317:13)
+    at F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:335:12)
+    at next (F:\nodejsProject\Intelligent police\node_modules\express\lib\router\index.js:275:10)
+    at SendStream.error (F:\nodejsProject\Intelligent police\node_modules\serve-static\index.js:121:7)
+    at emitOne (events.js:116:13)
