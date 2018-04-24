@@ -35,14 +35,19 @@ client.on("error", (err)=>{
   console.log('redis连接失败：' + err);
 });
 
+log4js.configure('./config/log4js.json');// 加载日志配置文件
+
 /**
  * 引入路由文件
  */
 var users = require('./routes/api/users');
 var managers = require('./routes/managers/index');
+var cos = require('./routes/api/cos');
+var events = require('./routes/api/events');
 //var api_managers = require('./routes/api/managers');
 
 var app = express();
+app.use(log4js.connectLogger(log4js.getLogger('access'), { level: log4js.levels.INFO }));// 将访问信息写入日志
 
 app.use((req, res, next)=>{
   res.redis = client;
@@ -76,6 +81,9 @@ app.get('/api/time', (req, res, next) => {
 });
 app.use('/api/users', users);
 app.use('/admin', managers);
+app.use('/api/cos', cos);
+app.use('/api/events', events);
+
 //app.use('/api/managers', api_managers);
 
 // catch 404 and forward to error handler

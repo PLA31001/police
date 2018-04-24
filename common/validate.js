@@ -13,24 +13,56 @@ function valdate (obj) {
                         return '手机号码格式不正确';
                     };
                     break;
-                case 'email':
+                case 'email':// 验证邮箱
                     if ( !/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(obj[key]) ) {
                         return '邮箱格式不正确';
                     }
                     break;
-                case 'sex':
+                case 'sex':// 验证性别数据
                     if ( !/^(1|2)$/.test(obj[key]) ) {
                         return '性别数据格式不正确';
                     }
                     break;
-                case 'age':
+                case 'age':// 验证年龄数据
                     if ( !/^([1-9][0-9]|[1-9]{1}|100)$/.test(obj[key]) ) {
                         return '年龄格式或范围不正确';
                     }
                     break;
-                case 'status':
-                    if ( !/^(1|0)$/.test(obj[key]) ) {
-                        return '状态格式不正确';
+                case 'status':// 验证状态数据
+                    let acceptArr = [1,2,3,4]
+                    if ( acceptArr.includes(obj[key]) ) {
+                        return 'status参数格式错误';
+                    }
+                    break;
+                case "position":
+                    if ( typeof obj[key] !== 'array' ) {
+                        return '地理位置数据格式不正确';
+                    }
+                    obj[key].forEach(val => {
+                        if ( typeof val !== "Number" ) {
+                            return '地理位置数据格式不正确';
+                        }
+                    });
+                    break;
+                case 'photos':
+                case 'vedios':
+                    if ( typeof obj[key] !== 'array' ) {
+                        return 'photos或vedios数据格式不正确';
+                    }
+                    obj[key].forEach(val => {
+                        if ( typeof val !== 'object' ) {
+                            return 'photos或vedios数据格式不正确'
+                        } else if ( val.path === undefined ) {
+                            return 'photos或vedios数据格式不正确';
+                        } else if ( val.addTime === undefined || typeof val.addTime !== 'Number' ) {
+                            return 'photos或vedios数据格式不正确';
+                        }
+                    });
+                    break;
+                case 'type':
+                    let arr = [1,2,3];
+                    if ( arr.includes(obj[key]) ) {
+                        return 'type格式错误';
                     }
                     break;
             }

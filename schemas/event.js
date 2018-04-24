@@ -30,7 +30,7 @@ const eventSchema = new mongoose.Schema({
     },
     type : {
         type : Number,
-        default : 1
+        default : 1 // 1匪警2火警3急救
     },
     sendUser : {
         type : mongoose.Schema.Types.ObjectId,
@@ -42,17 +42,21 @@ const eventSchema = new mongoose.Schema({
     },
     addTime : {
         type : Date,
-        default : new Data()
+        default : new Date()
     },
     status : {
         type : Number,
-        default : 1
+        default : 1 // 1->未受理 2->受理中 3->已解决 4->已关闭
     },
     updateTime : {
         type : Date,
         default : new Date()
     },
     isHistory : {
+        type : Boolean,
+        default : false
+    },
+    isDeleted : {
         type : Boolean,
         default : false
     }

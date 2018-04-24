@@ -1,10 +1,10 @@
 let express = require('express');
-let auth = require('../../model/auth');
 let log4js = require('log4js');
 let usersModel = require('../../model/Users');
 let func = require('../../common/func');
-let queryString = require('querystring');
 let validate = require('../../common/validate');
+let authorization = require('../../middleware/authorization');
+let auth = require('../../model/auth');
 
 // log4js配置
 log4js.configure('config/log4js.json');
@@ -13,26 +13,7 @@ let defaultLogger = log4js.getLogger();
 
 let router = express.Router();
 
-/**
- * 用来调试的
- */
-router.get('/test', (req, res, next) => {
-    //res.writeHead(403);
-    var a = {
-        tel : '',
-        email : '1335200614@qq.com',
-        age : 0,
-        sex : 1,
-        status : 1
-    }
-    let result = validate(a);
-    if ( result !== true) {
-        return res.send(result);
-    } else {
-        return res.send('正确');
-    }
 
-});
 
 /**
  * 微信登录
@@ -101,6 +82,7 @@ router.post('/login', (req, res, next) => {
                         // 在redis中缓存用户登录凭证
                         let token =  func.getTokenStr(sessionKey, openId);;
                         res.redis.hmset(userData._id, {
+                            type : 3,
                             token,
                             sessionKey,
                             openId
@@ -145,48 +127,9 @@ router.post('/login', (req, res, next) => {
 });
 
 /**
- * 验证请求是否合法
+ * 加载用户验证中间件
  */
-router.use((req, res, next) => {
-    // 获取验证信息
-    let authorization = req.headers.authorization;
-    let authorizationObj = queryString.parse(authorization);
-    
-    // 验证信息非空校验
-    if ( authorizationObj.sign === undefined || 
-         authorizationObj.timeStamp === undefined ||
-         authorizationObj.id === undefined ) {
-        return next({
-            status : 401,
-            msg : "缺少验证头信息"
-        });
-    }
-
-    let sign = authorizationObj.sign,
-        timeStamp = authorizationObj.timeStamp,
-        id = authorizationObj.id;
-
-    // 验证
-    try {
-        auth.checkLogin(id, sign, timeStamp, (result) => {
-            if ( result !== true ) {
-                defaultLogger.info(result);
-                return next({
-                    status : 403,
-                    msg : result
-                });
-            } else {
-                next();
-            }
-        });
-    } catch (error) {
-        logger.error(error);
-        return next({
-            status : 500,
-            msg : "服务器内部错误"
-        });
-    }
-});
+router.use(authorization);
 
 /**
  * 更新一个用户的数据
