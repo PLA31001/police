@@ -5,7 +5,10 @@ const mongoose = require('mongoose');
  */
 const vedio = new mongoose.Schema({
     path : String,
-    addTime : Date
+    addTime : {
+        type : Date,
+        default : new Date()
+    }
 });
 
 /**
@@ -13,7 +16,10 @@ const vedio = new mongoose.Schema({
  */
 const photo = new mongoose.Schema({
     path : String,
-    addTime : Date
+    addTime : {
+        type : Date,
+        default : new Date()
+    }
 });
 
 const eventSchema = new mongoose.Schema({

@@ -29,24 +29,24 @@ function valdate (obj) {
                     }
                     break;
                 case 'status':// 验证状态数据
-                    let acceptArr = [1,2,3,4]
-                    if ( acceptArr.includes(obj[key]) ) {
+                    let acceptArr = [1,2,3,4];
+                    if ( !acceptArr.includes(parseInt(obj[key])) ) {
                         return 'status参数格式错误';
                     }
                     break;
                 case "position":
-                    if ( typeof obj[key] !== 'array' ) {
+                    if ( !(obj[key] instanceof Array) || obj[key].length !== 2) {
                         return '地理位置数据格式不正确';
                     }
                     obj[key].forEach(val => {
-                        if ( typeof val !== "Number" ) {
+                        if ( typeof val !== "number" ) {
                             return '地理位置数据格式不正确';
                         }
                     });
                     break;
                 case 'photos':
                 case 'vedios':
-                    if ( typeof obj[key] !== 'array' ) {
+                    if ( !(obj[key] instanceof Array) ) {
                         return 'photos或vedios数据格式不正确';
                     }
                     obj[key].forEach(val => {
@@ -61,7 +61,7 @@ function valdate (obj) {
                     break;
                 case 'type':
                     let arr = [1,2,3];
-                    if ( arr.includes(obj[key]) ) {
+                    if ( !arr.includes(obj[key]) ) {
                         return 'type格式错误';
                     }
                     break;
