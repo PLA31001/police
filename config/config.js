@@ -33,7 +33,7 @@ module.exports = {
         secretId: 'AKIDP7kGrahSuFXhBk6TCqJdnFaq1AAC50nS',
         secretKey: 'hHzy3EVZr6A8TuEgHyXtO66zx1wbFmP4',
         appid: '1253679295',
-        bucket: 'fgoss01',
+        bucket: 'fgcos',
         // folder: 'police',  // 多次次签名一定不要带路径
         expiredTime : 60
     },

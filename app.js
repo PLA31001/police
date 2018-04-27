@@ -47,7 +47,7 @@ var events = require('./routes/api/events');
 //var api_managers = require('./routes/api/managers');
 
 var app = express();
-app.use(log4js.connectLogger(log4js.getLogger('access'), { level: log4js.levels.INFO }));// 将访问信息写入日志
+app.use(log4js.connectLogger(log4js.getLogger('access'), { level: log4js.levels.TRACE }));// 将访问信息写入日志
 
 app.use((req, res, next)=>{
   res.redis = client;
